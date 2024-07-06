@@ -19,7 +19,8 @@ const Login = () => {
         //    console.log(result)
                // set values in localstorage
                console.log(result.data)
-            localStorage.setItem('userid', result.data.userid)
+               sessionStorage.setItem('userid', result.data.userid)
+               navigate('/home')
             
         }).catch(err => {
             // toast.error('err')
@@ -36,7 +37,7 @@ const Login = () => {
          <input value={username} onChange={(e) => setUsername(e.target.value)}/>
          <input value={password} onChange={(e) => setPassword(e.target.value)}/>
          <button type='submit'>Login </button>
-         <button onClick={() => {}}>Sign Up</button>
+         <button onClick={() => { navigate('/signup')}}>Sign Up</button>
          <ToastContainer/>
       </form>
     </div>
